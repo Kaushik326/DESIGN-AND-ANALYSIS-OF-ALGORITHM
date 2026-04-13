@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+   int n,i,j;
+   printf("enter no of elements:");
+   scanf("%d",&n);
+   int a[n];
+   for(i=0;i<n;i++){
+      printf("enter element %d:",i+1);
+      scanf("%d",&a[i]);
+   }
+   for(i=0;i<n-1;i++){
+      int min=i;
+      for(j=i+1;j<n;j++){
+         if(a[j]<a[i]){
+            min=j;
+         }
+      }
+      int temp=a[i];
+      a[i]=a[min];
+      a[min]=temp;
+   }
+   printf("Selection sort");
+   for(i=0;i<n;i++){
+      printf("%d,",a[i]);
+   }
+   printf("\n");
+}
